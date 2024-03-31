@@ -11,7 +11,5 @@ namespace LegacyApp
         public string LastName { get; internal set; }
         public bool HasCreditLimit { get; internal set; }
         public int CreditLimit { get; internal set; }
-        
     }
-    
 }

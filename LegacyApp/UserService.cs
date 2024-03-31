@@ -12,10 +12,13 @@ namespace LegacyApp
     {
         Client GetById(int idClient);
     }
+
+    
+
     public class UserService
     {
-        private IClientRepository _clientRepository;
-        private ICreditLimitService _creditLimit;
+        private ClientRepository _clientRepository;
+        private UserCreditService _creditLimit;
         
         [Obsolete]
         public UserService()
@@ -24,26 +27,19 @@ namespace LegacyApp
             _creditLimit = new UserCreditService();
        }
 
-        public UserService(IClientRepository clientRepository, ICreditLimitService creditLimit)
+        public UserService(ClientRepository clientRepository, UserCreditService creditLimit)
         {
             _clientRepository = clientRepository;
             _creditLimit = creditLimit;
         }
         public bool AddUser(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId)
         {
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
-            {
-                return false;
-            }
+            if (!Validator.ValidatorAddUser(firstName, lastName)) return false;
 
-            if (!email.Contains("@") && !email.Contains("."))
-            {
-                return false;
-            }
+            if (!Validator.ValidatorAddUserMail(email)) return false;
 
-            var now = DateTime.Now;
-            int age = now.Year - dateOfBirth.Year;
-            if (now.Month < dateOfBirth.Month || (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day)) age--;
+
+            int age = CalculateAge(dateOfBirth);
 
             if (age < 21)
             {
@@ -61,24 +57,7 @@ namespace LegacyApp
                 LastName = lastName
             };
             
-            if (client.Type == "VeryImportantClient")
-            {
-                user.HasCreditLimit = false;
-            }
-            else if (client.Type == "ImportantClient")
-            {
-
-                    int creditLimit = _creditLimit.GetCreditLimit(user.LastName, user.DateOfBirth);
-                    creditLimit = creditLimit * 2;
-                    user.CreditLimit = creditLimit;
-
-            }
-            else
-            {
-                user.HasCreditLimit = true;
-                int creditLimit = _creditLimit.GetCreditLimit(user.LastName, user.DateOfBirth);
-                user.CreditLimit = creditLimit;
-            }
+            UserValidator(client, user);
             
             if (user.HasCreditLimit && user.CreditLimit < 500)
             {
@@ -87,6 +66,36 @@ namespace LegacyApp
 
             UserDataAccess.AddUser(user);
             return true;
+        }
+
+        public void UserValidator(Client client, User user)
+        {
+            if (client.Type == "VeryImportantClient")
+            {
+                user.HasCreditLimit = false;
+            }
+            else if (client.Type == "ImportantClient")
+            {
+
+                int creditLimit = _creditLimit.GetCreditLimit(user.LastName, user.DateOfBirth);
+                creditLimit = creditLimit * 2;
+                user.CreditLimit = creditLimit;
+
+            }
+            else
+            {
+                user.HasCreditLimit = true;
+                int creditLimit = _creditLimit.GetCreditLimit(user.LastName, user.DateOfBirth);
+                user.CreditLimit = creditLimit;
+            }
+        }
+
+        private int CalculateAge(DateTime dateOfBirth)
+        {
+            var now = DateTime.Now;
+            int age = now.Year - dateOfBirth.Year;
+            if (now.Month < dateOfBirth.Month || (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day)) age--;
+            return age;
         }
     }
 }
