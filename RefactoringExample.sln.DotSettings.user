@@ -1,5 +1,22 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\kmala\AppData\Local\JetBrains\Rider2023.3\resharper-host\temp\Rider\vAny\CoverageData\_RefactoringExample.1878553188\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c4152ef_002Df8b1_002D4af9_002D9cd4_002De40b0d830859/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddUser_Should_Return_False_When_Missing_FirstName" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::FFCF1336-36DD-4C96-85F2-4ECE2558A2BA::net8.0::LegacyAppTests.UserServiceTests.AddUser_Should_Return_False_When_Missing_FirstName&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::FFCF1336-36DD-4C96-85F2-4ECE2558A2BA::net8.0::LegacyAppTests.UserServiceTests.AddUser_Should_Return_False_When_Missing_At_Sign_And_Dot_In_Email&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::FFCF1336-36DD-4C96-85F2-4ECE2558A2BA::net8.0::LegacyAppTests.UserServiceTests.AddUser_Should_Return_False_When_Younger_Then_21_Years_Old&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::FFCF1336-36DD-4C96-85F2-4ECE2558A2BA::net8.0::LegacyAppTests.UserServiceTests.AddUser_Should_Return_True_When_Very_Important_Client&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::FFCF1336-36DD-4C96-85F2-4ECE2558A2BA::net8.0::LegacyAppTests.UserServiceTests.AddUser_Should_Return_True_When_Important_Client&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a1630564_002Dc2b2_002D443a_002D8878_002D1a52df2162c2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddUser_Should_Return_True_When_Normal_Client" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::FFCF1336-36DD-4C96-85F2-4ECE2558A2BA::net8.0::LegacyAppTests.UserServiceTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a499f33d_002D5ca5_002D4e4e_002D9296_002Df44e58d4f2ff/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;LegacyAppTests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\xxveg\Downloads\zadanie_with_initial_tests\zadanie_solution\LegacyAppTests" Presentation="&amp;lt;LegacyAppTests&amp;gt;" /&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a499f33d_002D5ca5_002D4e4e_002D9296_002Df44e58d4f2ff/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;LegacyAppTests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::FFCF1336-36DD-4C96-85F2-4ECE2558A2BA::net8.0::LegacyAppTests.UserServiceTests.AddUser_Should_Return_False_When_Missing_FirstName&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
